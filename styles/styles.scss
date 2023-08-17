@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap');
+
+/* PRIMARY COLORS */
+
+$primary-softRed: hsl(7, 99%, 70%);
+$primary-yellow: hsl(51, 100%, 49%);
+$primary-darkDesaturatedcyan: hsl(167, 40%, 24%);
+$primary-darkBlue: hsl(198, 62%, 26%);
+$primary-darkModeratecyan: hsl(168, 34%, 41%);
+
+/* NEUTRAL COLORS */
+
+$neutral-Verydarkdesaturatedblue: hsl(212, 27%, 19%);
+$neutral-Verydarkgrayishblue: hsl(213, 9%, 39%);
+$neutral-Darkgrayishblue: hsl(232, 10%, 55%);
+$neutral-Grayishblue: hsl(210, 4%, 67%);
+$neutral-White: hsl(0, 0%, 100%);
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-image: url("/images/mobile/image-header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 42rem;
+    width: 100%;
+    align-items: center;
+
+    &__nav    {
+    }
+    &__logo   {
+    }
+    &__navbar   {
+        display: none;
+        &__list {
+            &__itemlist {
+            }
+        }
+    }
+    &__h1   {
+        font-size: 32px;
+        color: $neutral-White;    
+    }
+  }
+  
