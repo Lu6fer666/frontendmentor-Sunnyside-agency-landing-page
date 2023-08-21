@@ -2,11 +2,11 @@
 
 /* PRIMARY COLORS */
 
-$primary-softRed: hsl(7, 99%, 70%);
-$primary-yellow: hsl(51, 100%, 49%);
-$primary-darkDesaturatedcyan: hsl(167, 40%, 24%);
-$primary-darkBlue: hsl(198, 62%, 26%);
-$primary-darkModeratecyan: hsl(168, 34%, 41%);
+$primary-SoftRed: hsl(7, 99%, 70%);
+$primary-Yellow: hsl(51, 100%, 49%);
+$primary-DarkDesaturatedcyan: hsl(167, 40%, 24%);
+$primary-DarkBlue: hsl(198, 62%, 26%);
+$primary-DarkModeratecyan: hsl(168, 34%, 41%);
 
 /* NEUTRAL COLORS */
 
@@ -16,13 +16,84 @@ $neutral-Darkgrayishblue: hsl(232, 10%, 55%);
 $neutral-Grayishblue: hsl(210, 4%, 67%);
 $neutral-White: hsl(0, 0%, 100%);
 
+/* FONTS */
 
+$ff-barlow: 'Barlow';
+$ff-fraunces: 'Fraunces';
+
+/* TITLES H2 for articles */
+
+@mixin articleh2title {
+    font-size: 2rem;
+    font-family: $ff-fraunces;
+    text-align: center;
+    margin: 2rem;
+    color: $neutral-Verydarkdesaturatedblue;
+    font-weight: 900;
+}
+
+/* Paragraph for articles */
+
+@mixin articlep {
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0 1rem;
+    font-family: $ff-barlow;
+    color: $neutral-Darkgrayishblue;
+    line-height: 2rem;
+}
+
+/* Titles H3 for articles */
+
+@mixin articleh3 {
+    font-family: $ff-fraunces;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1.5rem;
+    color: $neutral-Verydarkdesaturatedblue;
+    font-weight: 900;
+    margin-bottom: 2rem;
+}
+
+/* Titles H2 for section */ 
+
+@mixin sectionh2($color) {
+    font-size: 1.8rem;
+    padding-top: 100%;
+    text-align: center;
+    font-family: $ff-fraunces;
+    font-weight: 900;
+    color: $color;
+}
+
+/* Paragraph for section */
+
+@mixin sectionp($color) {
+    color: $color;
+    font-family: $ff-barlow;
+    font-size: 1rem;
+    text-align: center;
+    padding: 2rem;
+    line-height: 1.6rem;
+    padding-bottom: 10%;
+}
+
+/* Reset */
 
 * {
     margin: 0;
     padding: 0;
 }
 
+/* Header/Navigation */
+.body {
+    overflow-y: scroll;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 .header {
     background-image: url("/images/mobile/image-header.jpg");
     background-repeat: no-repeat;
@@ -31,21 +102,266 @@ $neutral-White: hsl(0, 0%, 100%);
     height: 42rem;
     width: 100%;
     align-items: center;
-
-    &__nav    {
+    &__nav  {
+        position: relative;
+        padding: 2rem 2.2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 100%;
+    &__logo {
     }
-    &__logo   {
-    }
-    &__navbar   {
-        display: none;
-        &__list {
-            &__itemlist {
+        &__navbar {
+            &__list {
+                list-style: none;
+                &__itemlist {
+                    &__link {
+                    text-decoration: none;
+                    }
+                }
             }
         }
     }
+
     &__h1   {
-        font-size: 32px;
+        font-size: 2.4rem;
         color: $neutral-White;    
+        text-transform: uppercase;
+        font-family: $ff-fraunces;
+        letter-spacing: .4rem;
+        text-align: center;
     }
-  }
-  
+    &__arrowImg {
+        margin: 0 auto;
+        margin-top: 10rem;
+        height: 18%;
+        width: 2.2rem;
+        align-items: center;
+        display: flex;
+    }
+}
+
+  /* Articles */
+.main {
+    &__articletransform {
+        &__img {
+            width: 100%;
+        }
+        &__h2 {
+            @include articleh2title;
+        }
+        &__p {
+            @include articlep;
+        }
+        &__h3 {
+            @include articleh3;
+        }
+    }
+    &__articleaudience {
+        &__img {
+            width: 100%;
+        }
+        &__h2 {
+            @include articleh2title;
+        }
+        &__p {
+            @include articlep;
+        }
+        &__h3 {
+            @include articleh3;
+        }
+    }
+}
+
+    /* Sections */
+
+.sectiongraphic {
+    background-image: url("/images/mobile/image-graphic-design.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    &__h2 {
+        @include sectionh2($primary-DarkDesaturatedcyan);
+    }
+    &__p {
+        @include sectionp($primary-DarkDesaturatedcyan);
+    }
+}
+.sectionphotography {
+    background-image: url("/images/mobile/image-photography.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    &__h2 {
+        @include sectionh2($primary-DarkBlue);
+    }
+    &__p {
+        @include sectionp($primary-DarkBlue);
+    }
+}
+
+/* Testimonials */
+
+.testimonials {
+    &__h4 {
+        letter-spacing: .2rem;
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-family: $ff-fraunces;
+        text-align:center;
+        padding: 2.5rem;
+        color: $neutral-Grayishblue;
+    }
+    &__articletestimonials {
+        padding-bottom: 5rem;
+        text-align: center;
+        &__img {
+            border-radius: 100%;
+            height: 5rem;
+        }
+        &__p {
+            margin-top: 1rem;
+            @include articlep;
+        }
+        &__h3 {
+            @include articleh3;
+            text-transform:none;
+            margin-bottom: -.8rem;
+        }
+        &__footerUser {
+            color: $neutral-Grayishblue;
+            font-family: $ff-barlow;
+        }
+    }
+}
+.imgDeco {
+    display: flex;
+    flex-wrap: wrap;
+    img {
+        width: calc(50%); 
+    }
+    &__leite {
+    }
+    &__orange {
+    }
+    &__cornet {
+    }
+    &__sugar {
+    }
+}
+
+    /* Footer */
+
+.footer {
+    background-color: $primary-DarkModeratecyan;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 4rem 1.2rem;
+    min-height: 30vh;
+    text-align: center;
+    align-items: center;
+    &__logo {
+        fill: $primary-DarkDesaturatedcyan;
+    }
+    &__list {
+        display: flex;
+        flex-direction: row;
+        gap: 3.1rem;
+        list-style-type: none;
+        a {
+            text-decoration: none;
+            color: $primary-DarkDesaturatedcyan;
+            font-family: $ff-barlow;
+            font-weight: 900;
+        }
+        &__about {
+
+        }
+        &__services {
+
+        }
+        &__projects {
+
+        }
+    
+    }
+    &__socialmedias {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        margin-top: 2.3rem;
+        list-style-type: none;
+        fill: $primary-DarkDesaturatedcyan;
+        &__facebook {
+        }
+        &__instagram {
+        }
+        &__twitter {
+        }
+        &__pinterest {
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header{
+        background-image: url(/images/desktop/image-header.jpg);
+        &__h1   {
+        }
+    }
+    .main {
+        &__articletransform {
+            flex-direction: row-reverse;
+            display: flex;
+            &__img {
+                background-image: url(/images/desktop/image-transform.jpg);
+                width: calc(50%); 
+                height: calc(50%);
+            }
+            &__h2 {
+                font-size: 1.6rem;
+                text-align: center;
+            }
+            &__p {
+                font-size: 1rem;
+                text-align: center;
+
+            }
+            &__h3 {
+                font-size: 0.9rem;
+            }
+        }
+        &__articleaudience {
+            flex-direction: row;
+            display: flex;
+            &__img {
+                background-image: url(/images/desktop/image-stand-out.jpg);
+                width: calc(50%); 
+                height: calc(50%);
+            }
+        }
+    }
+}  
+
+.sectionphotography {
+    &__h2 {
+    }
+    &__p {
+    }
+}
+.imgDeco {
+    &__leite {
+        background-image: url(/images/desktop/image-gallery-milkbottles.jpg);
+    }
+    &__orange {
+        background-image: url(/images/desktop/image-gallery-orange.jpg);
+    }
+    &__cornet {
+        background-image: url(/images/desktop/image-gallery-cone.jpg);
+    }
+    &__sugar {
+        background-image: url(/images/desktop/image-gallery-sugarcubes.jpg);
+    }
+}

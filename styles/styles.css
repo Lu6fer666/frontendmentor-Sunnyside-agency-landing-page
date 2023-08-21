@@ -1,9 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
 /* PRIMARY COLORS */
 /* NEUTRAL COLORS */
+/* FONTS */
+/* TITLES H2 for articles */
+/* Paragraph for articles */
+/* Titles H3 for articles */
+/* Titles H2 for section */
+/* Paragraph for section */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
+}
+
+/* Header/Navigation */
+.body {
+  overflow-y: scroll;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .header {
@@ -15,10 +31,275 @@
   width: 100%;
   align-items: center;
 }
-.header__navbar {
-  display: none;
+.header__nav {
+  position: relative;
+  padding: 2rem 2.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+}
+.header__nav__navbar__list {
+  list-style: none;
+}
+.header__nav__navbar__list__itemlist__link {
+  text-decoration: none;
 }
 .header__h1 {
-  font-size: 32px;
+  font-size: 2.4rem;
   color: hsl(0, 0%, 100%);
+  text-transform: uppercase;
+  font-family: "Fraunces";
+  letter-spacing: 0.4rem;
+  text-align: center;
+}
+.header__arrowImg {
+  margin: 0 auto;
+  margin-top: 10rem;
+  height: 18%;
+  width: 2.2rem;
+  align-items: center;
+  display: flex;
+}
+
+/* Articles */
+.main__articletransform__img {
+  width: 100%;
+}
+.main__articletransform__h2 {
+  font-size: 2rem;
+  font-family: "Fraunces";
+  text-align: center;
+  margin: 2rem;
+  color: hsl(212, 27%, 19%);
+  font-weight: 900;
+}
+.main__articletransform__p {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0 1rem;
+  font-family: "Barlow";
+  color: hsl(232, 10%, 55%);
+  line-height: 2rem;
+}
+.main__articletransform__h3 {
+  font-family: "Fraunces";
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1.5rem;
+  color: hsl(212, 27%, 19%);
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+.main__articleaudience__img {
+  width: 100%;
+}
+.main__articleaudience__h2 {
+  font-size: 2rem;
+  font-family: "Fraunces";
+  text-align: center;
+  margin: 2rem;
+  color: hsl(212, 27%, 19%);
+  font-weight: 900;
+}
+.main__articleaudience__p {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0 1rem;
+  font-family: "Barlow";
+  color: hsl(232, 10%, 55%);
+  line-height: 2rem;
+}
+.main__articleaudience__h3 {
+  font-family: "Fraunces";
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1.5rem;
+  color: hsl(212, 27%, 19%);
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+
+/* Sections */
+.sectiongraphic {
+  background-image: url("/images/mobile/image-graphic-design.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.sectiongraphic__h2 {
+  font-size: 1.8rem;
+  padding-top: 100%;
+  text-align: center;
+  font-family: "Fraunces";
+  font-weight: 900;
+  color: hsl(167, 40%, 24%);
+}
+.sectiongraphic__p {
+  color: hsl(167, 40%, 24%);
+  font-family: "Barlow";
+  font-size: 1rem;
+  text-align: center;
+  padding: 2rem;
+  line-height: 1.6rem;
+  padding-bottom: 10%;
+}
+
+.sectionphotography {
+  background-image: url("/images/mobile/image-photography.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.sectionphotography__h2 {
+  font-size: 1.8rem;
+  padding-top: 100%;
+  text-align: center;
+  font-family: "Fraunces";
+  font-weight: 900;
+  color: hsl(198, 62%, 26%);
+}
+.sectionphotography__p {
+  color: hsl(198, 62%, 26%);
+  font-family: "Barlow";
+  font-size: 1rem;
+  text-align: center;
+  padding: 2rem;
+  line-height: 1.6rem;
+  padding-bottom: 10%;
+}
+
+/* Testimonials */
+.testimonials__h4 {
+  letter-spacing: 0.2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: "Fraunces";
+  text-align: center;
+  padding: 2.5rem;
+  color: hsl(210, 4%, 67%);
+}
+.testimonials__articletestimonials {
+  padding-bottom: 5rem;
+  text-align: center;
+}
+.testimonials__articletestimonials__img {
+  border-radius: 100%;
+  height: 5rem;
+}
+.testimonials__articletestimonials__p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0 1rem;
+  font-family: "Barlow";
+  color: hsl(232, 10%, 55%);
+  line-height: 2rem;
+}
+.testimonials__articletestimonials__h3 {
+  font-family: "Fraunces";
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1.5rem;
+  color: hsl(212, 27%, 19%);
+  font-weight: 900;
+  margin-bottom: 2rem;
+  text-transform: none;
+  margin-bottom: -0.8rem;
+}
+.testimonials__articletestimonials__footerUser {
+  color: hsl(210, 4%, 67%);
+  font-family: "Barlow";
+}
+
+.imgDeco {
+  display: flex;
+  flex-wrap: wrap;
+}
+.imgDeco img {
+  width: 50%;
+}
+/* Footer */
+.footer {
+  background-color: hsl(168, 34%, 41%);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 4rem 1.2rem;
+  min-height: 30vh;
+  text-align: center;
+  align-items: center;
+}
+.footer__logo {
+  fill: hsl(167, 40%, 24%);
+}
+.footer__list {
+  display: flex;
+  flex-direction: row;
+  gap: 3.1rem;
+  list-style-type: none;
+}
+.footer__list a {
+  text-decoration: none;
+  color: hsl(167, 40%, 24%);
+  font-family: "Barlow";
+  font-weight: 900;
+}
+.footer__socialmedias {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  margin-top: 2.3rem;
+  list-style-type: none;
+  fill: hsl(167, 40%, 24%);
+}
+@media screen and (min-width: 768px) {
+  .header {
+    background-image: url(/images/desktop/image-header.jpg);
+  }
+  .main__articletransform {
+    flex-direction: row-reverse;
+    display: flex;
+  }
+  .main__articletransform__img {
+    background-image: url(/images/desktop/image-transform.jpg);
+    width: 50%;
+    height: 50%;
+  }
+  .main__articletransform__h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  .main__articletransform__p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .main__articletransform__h3 {
+    font-size: 0.9rem;
+  }
+  .main__articleaudience {
+    flex-direction: row;
+    display: flex;
+  }
+  .main__articleaudience__img {
+    background-image: url(/images/desktop/image-stand-out.jpg);
+    width: 50%;
+    height: 50%;
+  }
+}
+.imgDeco__leite {
+  background-image: url(/images/desktop/image-gallery-milkbottles.jpg);
+}
+.imgDeco__orange {
+  background-image: url(/images/desktop/image-gallery-orange.jpg);
+}
+.imgDeco__cornet {
+  background-image: url(/images/desktop/image-gallery-cone.jpg);
+}
+.imgDeco__sugar {
+  background-image: url(/images/desktop/image-gallery-sugarcubes.jpg);
 }/*# sourceMappingURL=styles.css.map */
