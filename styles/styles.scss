@@ -96,6 +96,7 @@ $ff-fraunces: 'Fraunces';
 }
 
 /* Header/Navigation */
+
 .body {
     overflow-y: scroll;
     box-sizing: border-box;
@@ -119,8 +120,6 @@ $ff-fraunces: 'Fraunces';
         justify-content: space-between;
         align-items: center;
         max-width: 100%;
-    &__logo {
-    }
         &__navbar {
             display: none;
             &.shown {
@@ -147,7 +146,6 @@ $ff-fraunces: 'Fraunces';
                     border-width: 0 0 30px 30px;
                     border-color: transparent transparent $neutral-White transparent;
                     transform: rotate(0deg);
-                
                 }
                 &:after {
                     position: absolute;
@@ -162,7 +160,7 @@ $ff-fraunces: 'Fraunces';
                     border-top: 40px solid transparent;
                     border-right: 40px solid $neutral-White;
                 }
-          }
+            }
             &__list {
                 display: flex;
                 flex-direction: column;
@@ -183,7 +181,7 @@ $ff-fraunces: 'Fraunces';
                             color: $neutral-Verydarkdesaturatedblue;
                             background-color: $primary-Yellow;
                             font-family: $ff-fraunces;
-                            Border: .8rem solid $primary-Yellow;
+                            border: .8rem solid $primary-Yellow;
                             border-radius: 2rem;
                         }
                     }
@@ -193,9 +191,9 @@ $ff-fraunces: 'Fraunces';
     }
 
     
-.fa-solid {
-    color: $neutral-White;
-}
+    .fa-solid {
+        color: $neutral-White;
+    }
     &__h1   {
         font-size: 2.4rem;
         color: $neutral-White;    
@@ -229,6 +227,36 @@ $ff-fraunces: 'Fraunces';
             }
             &__h3 {
                 @include articleh3;
+                &__a {
+                    text-decoration: none;
+                    text-decoration: none;
+                    color: $neutral-Verydarkdesaturatedblue;
+                    margin-left: 0.5rem;
+                    position: relative;
+                    &:after, &:before {
+                        content: ''; /* Ajoutez du contenu généré via pseudo-élément */
+                        display: block;
+                        position: absolute;
+                        bottom: -.2rem; /* Ajustez cette valeur pour contrôler la position de la barre */
+                        height: .6em; 
+                        background-color: hsl(51, 100%, 49%, 0.2);
+                        border-radius: 8px;        
+                        bottom: -3px;
+                        left: -5%;
+                        width: 112%;
+                        transform: scaleX(0);
+                        transform-origin: center;
+                        transition: transform 0.3s ease;
+                    }
+                    &:after {
+                        content: '';
+                        right: 0;
+                    }
+                    &:hover:after, &:hover:before {
+                        transform: scaleX(1);
+                        transition: transform 0.3s ease;
+                    }
+                }
             }
         }
     }
@@ -245,6 +273,36 @@ $ff-fraunces: 'Fraunces';
             }
             &__h3 {
                 @include articleh3;
+                &__a {
+                    text-decoration: none;
+                    text-decoration: none;
+                    color: $neutral-Verydarkdesaturatedblue;
+                    margin-left: 0.5rem;
+                    position: relative;
+                    &:after, &:before {
+                        content: ''; /* Ajoutez du contenu généré via pseudo-élément */
+                        display: block;
+                        position: absolute;
+                        bottom: -.2rem; /* Ajustez cette valeur pour contrôler la position de la barre */
+                        height: .6em; 
+                        background-color: hsl(7, 99%, 70%, 0.2);
+                        border-radius: 8px;        
+                        bottom: -3px;
+                        left: -5%;
+                        width: 112%;
+                        transform: scaleX(0);
+                        transform-origin: center;
+                        transition: transform 0.3s ease;
+                    }
+                    &:after {
+                        content: '';
+                        right: 0;
+                    }
+                    &:hover:after, &:hover:before {
+                        transform: scaleX(1);
+                        transition: transform 0.3s ease;
+                    }
+                }
             }
         }
     }
@@ -368,17 +426,10 @@ $ff-fraunces: 'Fraunces';
             color: $primary-DarkDesaturatedcyan;
             font-family: $ff-barlow;
             font-weight: 900;
+            &:hover {
+                color: $neutral-White;
+            }             
         }
-        &__about {
-
-        }
-        &__services {
-
-        }
-        &__projects {
-
-        }
-    
     }
     &__socialmedias {
         display: flex;
@@ -387,19 +438,51 @@ $ff-fraunces: 'Fraunces';
         margin-top: 2.3rem;
         list-style-type: none;
         fill: $primary-DarkDesaturatedcyan;
-        
         &__facebook {
+            &__link {
+                &__svg {
+                    &:hover {
+                        fill: $neutral-White;
+                        cursor: pointer;
+                    }
+                }
+            }
         }
         &__instagram {
+            &__link {
+                &__svg {
+                    &:hover {
+                        fill: $neutral-White;
+                        cursor: pointer;
+                    }
+                }
+            }
         }
         &__twitter {
+            &__link {
+                &__svg {
+                    &:hover {
+                        fill: $neutral-White;
+                        cursor: pointer;
+                    }
+                }
+            }
         }
-        &__pinterest {
+        &__pinterest {        
+            &__link {
+                &__svg {
+                    &:hover {
+                        fill: $neutral-White;
+                        cursor: pointer;
+                    }                
+                }
+            }
         }
     }
 }
 
 @media screen and (min-width: 768px) {
+
     .header{
         background-image: url(/images/desktop/image-header.jpg);
         &__nav {
@@ -411,13 +494,30 @@ $ff-fraunces: 'Fraunces';
                 justify-content: space-between;
                 align-items: center;
                 position: relative;
+                &__list {
+                    flex-direction: row;
+                    gap: 2.6rem;
+                    margin-right: 2.8rem;
+                    &__itemlist {
+                        &__link {
+                            color: $neutral-White;
+                            font-size: .8rem;
+                            &:active, &:focus {
+                                text-transform: uppercase;
+                                color: $neutral-Verydarkdesaturatedblue;
+                                background-color: $neutral-White;
+                                font-family: $ff-fraunces;
+                                Border: .8rem solid $neutral-White ;
+                                border-radius: 2rem;
+                            }
+                        }
+                    }
+                }
             }
         }
         .fa-solid {
             display: none;
         }   
-        &__h1   {
-        }
         &__arrowImg {
             margin-top: 2rem;
             align-items: center;
@@ -435,33 +535,28 @@ $ff-fraunces: 'Fraunces';
                 max-width: 100%;
             }
             &__cont {
-                padding: 2rem 2rem 1rem 2rem;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column; /* Ajustement pour centrer verticalement le contenu */
+                justify-content: center;
+                padding: 0 2rem;
                 &__h2 {
                     font-size: 1.6rem;
                     text-align: left;
-                    width: 100%;
                     margin: 0.8em 0;
                     padding: 0rem;
-                    display: flex;
-                    flex-direction: column;
                 }
                 &__p {
-                    width: 100%;
                     font-size: 1rem;
                     text-align: left;
                     margin: 1em 0;
                     padding: 0rem;
-                    display: flex;
-                    flex-direction: column;
                 }
                 &__h3 {
-                    width: 100%;
                     font-size: 0.9rem;
                     text-align: left;
                     margin: 1em 0;
                     padding: 0rem;
-                    display: flex;
-                    flex-direction: column;
                 }
             }
         }
@@ -476,33 +571,28 @@ $ff-fraunces: 'Fraunces';
                 max-width: 100%;
             }
             &__cont {
-                padding: 2rem 2rem 0 2rem;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column; /* Ajustement pour centrer verticalement le contenu */
+                justify-content: center;
+                padding: 0 2rem;
                 &__h2 {
                     font-size: 1.6rem;
                     text-align: left;
-                    width: 100%;
                     margin: .8em 0;
                     padding: 0rem;
-                    display: flex;
-                    flex-direction: column;
                     }
                 &__p {
-                    width: 100%;
                     font-size: 1rem;
                     text-align: left;
                     margin: 1em 0;
                     padding: 0rem;
-                    display: flex;
-                    flex-direction: column;
                     }
                 &__h3 {
-                    width: 100%;
                     font-size: 0.9rem;
                     text-align: left;
                     margin: 1em 0;
                     padding: 0rem;
-                    display: flex;
-                    flex-direction: column;
                 }
             }
         }
@@ -524,8 +614,6 @@ $ff-fraunces: 'Fraunces';
             flex: 1;
             &__h2 {
                 padding-top: 20rem;
-            }
-            &__p {
             }
         }
     }
@@ -563,15 +651,11 @@ $ff-fraunces: 'Fraunces';
             flex-direction: row;
             display: flex;
             padding-bottom: 6rem;
-        &__articletestimonials {
-            padding: 0;
-            display: inline-block;
-            vertical-align: top;
-            flex-direction: row;
-                &__p {
-                }
-                &__h3 {
-                }
+            &__articletestimonials {
+                padding: 0;
+                display: inline-block;
+                vertical-align: top;
+                flex-direction: row;
             }
         }
     }
@@ -580,15 +664,8 @@ $ff-fraunces: 'Fraunces';
 @media only screen and (min-width: 980px) {
     .main {
         &__articletransform {
-            &__img {
-            }
             &__cont {
                 padding: 3.8rem;
-                &__h2 {
-
-                }
-                &__p {
-                }
                 &__h3 {
                     padding-left: 0.2rem;
                 }
@@ -596,36 +673,31 @@ $ff-fraunces: 'Fraunces';
         }
     
         &__articleaudience {
-            &__img {
-            }
             &__cont {
                 padding: 3.8rem;
-                &__h2 {
-                    }
-                &__p {
-                    }
                 &__h3 {
                     padding-left: 0.2rem;
                 }
             }
         }
     }
-
-    .nav {
-        &__navbar {
-            position: relative;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-             &__list {
+    .header {
+        &__nav {
+            &__navbar {
+                position: relative;
                 display: flex;
                 flex-direction: row;
-                gap: 2.6rem;
-                justify-content: space-evenly;
-                margin-right: 2.8rem;
-             }
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+                &__list {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 2.6rem;
+                    justify-content: space-evenly;
+                    margin-right: 2.8rem;
+                }
+            }
         }
     }
 }

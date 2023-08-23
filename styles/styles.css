@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
 /* PRIMARY COLORS */
 /* NEUTRAL COLORS */
@@ -106,7 +107,7 @@
   color: hsl(212, 27%, 19%);
   background-color: hsl(51, 100%, 49%);
   font-family: "Fraunces";
-  Border: 0.8rem solid hsl(51, 100%, 49%);
+  border: 0.8rem solid hsl(51, 100%, 49%);
   border-radius: 2rem;
 }
 .header .fa-solid {
@@ -159,6 +160,36 @@
   font-weight: 900;
   margin-bottom: 2rem;
 }
+.main__articletransform__cont__h3__a {
+  text-decoration: none;
+  text-decoration: none;
+  color: hsl(212, 27%, 19%);
+  margin-left: 0.5rem;
+  position: relative;
+}
+.main__articletransform__cont__h3__a:after, .main__articletransform__cont__h3__a:before {
+  content: ""; /* Ajoutez du contenu généré via pseudo-élément */
+  display: block;
+  position: absolute;
+  bottom: -0.2rem; /* Ajustez cette valeur pour contrôler la position de la barre */
+  height: 0.6em;
+  background-color: hsla(51, 100%, 49%, 0.2);
+  border-radius: 8px;
+  bottom: -3px;
+  left: -5%;
+  width: 112%;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.main__articletransform__cont__h3__a:after {
+  content: "";
+  right: 0;
+}
+.main__articletransform__cont__h3__a:hover:after, .main__articletransform__cont__h3__a:hover:before {
+  transform: scaleX(1);
+  transition: transform 0.3s ease;
+}
 .main__articleaudience__img {
   width: 100%;
 }
@@ -187,6 +218,36 @@
   color: hsl(212, 27%, 19%);
   font-weight: 900;
   margin-bottom: 2rem;
+}
+.main__articleaudience__cont__h3__a {
+  text-decoration: none;
+  text-decoration: none;
+  color: hsl(212, 27%, 19%);
+  margin-left: 0.5rem;
+  position: relative;
+}
+.main__articleaudience__cont__h3__a:after, .main__articleaudience__cont__h3__a:before {
+  content: ""; /* Ajoutez du contenu généré via pseudo-élément */
+  display: block;
+  position: absolute;
+  bottom: -0.2rem; /* Ajustez cette valeur pour contrôler la position de la barre */
+  height: 0.6em;
+  background-color: hsla(7, 99%, 70%, 0.2);
+  border-radius: 8px;
+  bottom: -3px;
+  left: -5%;
+  width: 112%;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.main__articleaudience__cont__h3__a:after {
+  content: "";
+  right: 0;
+}
+.main__articleaudience__cont__h3__a:hover:after, .main__articleaudience__cont__h3__a:hover:before {
+  transform: scaleX(1);
+  transition: transform 0.3s ease;
 }
 
 /* Sections */
@@ -348,6 +409,9 @@
   font-family: "Barlow";
   font-weight: 900;
 }
+.footer__list a:hover {
+  color: hsl(0, 0%, 100%);
+}
 .footer__socialmedias {
   display: flex;
   flex-direction: row;
@@ -356,6 +420,23 @@
   list-style-type: none;
   fill: hsl(167, 40%, 24%);
 }
+.footer__socialmedias__facebook__link__svg:hover {
+  fill: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+.footer__socialmedias__instagram__link__svg:hover {
+  fill: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+.footer__socialmedias__twitter__link__svg:hover {
+  fill: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+.footer__socialmedias__pinterest__link__svg:hover {
+  fill: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+
 @media screen and (min-width: 768px) {
   .header {
     background-image: url(/images/desktop/image-header.jpg);
@@ -370,6 +451,23 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+  }
+  .header__nav__navbar__list {
+    flex-direction: row;
+    gap: 2.6rem;
+    margin-right: 2.8rem;
+  }
+  .header__nav__navbar__list__itemlist__link {
+    color: hsl(0, 0%, 100%);
+    font-size: 0.8rem;
+  }
+  .header__nav__navbar__list__itemlist__link:active, .header__nav__navbar__list__itemlist__link:focus {
+    text-transform: uppercase;
+    color: hsl(212, 27%, 19%);
+    background-color: hsl(0, 0%, 100%);
+    font-family: "Fraunces";
+    Border: 0.8rem solid hsl(0, 0%, 100%);
+    border-radius: 2rem;
   }
   .header .fa-solid {
     display: none;
@@ -389,34 +487,29 @@
     max-width: 100%;
   }
   .main__articletransform__cont {
-    padding: 2rem 2rem 1rem 2rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* Ajustement pour centrer verticalement le contenu */
+    justify-content: center;
+    padding: 0 2rem;
   }
   .main__articletransform__cont__h2 {
     font-size: 1.6rem;
     text-align: left;
-    width: 100%;
     margin: 0.8em 0;
     padding: 0rem;
-    display: flex;
-    flex-direction: column;
   }
   .main__articletransform__cont__p {
-    width: 100%;
     font-size: 1rem;
     text-align: left;
     margin: 1em 0;
     padding: 0rem;
-    display: flex;
-    flex-direction: column;
   }
   .main__articletransform__cont__h3 {
-    width: 100%;
     font-size: 0.9rem;
     text-align: left;
     margin: 1em 0;
     padding: 0rem;
-    display: flex;
-    flex-direction: column;
   }
   .main__articleaudience {
     flex-direction: row;
@@ -429,34 +522,29 @@
     max-width: 100%;
   }
   .main__articleaudience__cont {
-    padding: 2rem 2rem 0 2rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* Ajustement pour centrer verticalement le contenu */
+    justify-content: center;
+    padding: 0 2rem;
   }
   .main__articleaudience__cont__h2 {
     font-size: 1.6rem;
     text-align: left;
-    width: 100%;
     margin: 0.8em 0;
     padding: 0rem;
-    display: flex;
-    flex-direction: column;
   }
   .main__articleaudience__cont__p {
-    width: 100%;
     font-size: 1rem;
     text-align: left;
     margin: 1em 0;
     padding: 0rem;
-    display: flex;
-    flex-direction: column;
   }
   .main__articleaudience__cont__h3 {
-    width: 100%;
     font-size: 0.9rem;
     text-align: left;
     margin: 1em 0;
     padding: 0rem;
-    display: flex;
-    flex-direction: column;
   }
   .contsection {
     display: flex;
@@ -529,7 +617,7 @@
   .main__articleaudience__cont__h3 {
     padding-left: 0.2rem;
   }
-  .nav__navbar {
+  .header__nav__navbar {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -537,7 +625,7 @@
     align-items: center;
     position: relative;
   }
-  .nav__navbar__list {
+  .header__nav__navbar__list {
     display: flex;
     flex-direction: row;
     gap: 2.6rem;
